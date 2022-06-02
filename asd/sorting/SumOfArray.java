@@ -1,7 +1,5 @@
 package asd.sorting;
 
-import java.util.concurrent.SubmissionPublisher;
-
 public class SumOfArray
 {
     int sum(int arr[], int n)

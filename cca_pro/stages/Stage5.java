@@ -44,5 +44,6 @@ public class Stage5
         }
         stmt.close();
         conn.close();
+        sc.close();
     }  
 }
