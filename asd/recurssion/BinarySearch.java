@@ -1,4 +1,4 @@
-package asd.sorting;
+package asd.recurssion;
 
 public class BinarySearch
 {
