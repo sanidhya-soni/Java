@@ -19,5 +19,6 @@ public class Blah
         {
             System.out.println(nums[i]);
         }
+        System.out.println();
     }
 }
