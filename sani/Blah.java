@@ -13,6 +13,7 @@ public class Blah
             {
                 nums[j] = nums[i];
                 j++;
+            }
         }
         for(i = 0; i < j; i++)
         {
