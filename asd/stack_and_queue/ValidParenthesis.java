@@ -4,27 +4,36 @@ import java.util.Stack;
 
 public class ValidParenthesis
 {
-    boolean validParenthesis(String s, int i, Stack<Character> braces)
-    {
-        if(s.length() == i && braces.size() > 0)
-        {
-            return false;
-        }
 
-        if(s.charAt(i) == '[' || s.charAt(i) == '{' || s.charAt(i) == '(')
+    boolean validParenthesis(String s, Stack<Character> braces)
+    {
+        int i;
+        for(i = 0; i < s.length(); i++)
         {
-            braces.push(s.charAt(i));
-            return validParenthesis(s, i + 1, braces);
+            if(s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[')
+            {
+                braces.push(s.charAt(i));
+            }
+            else
+            {
+                if(!braces.isEmpty())
+                {   char ch = s.charAt(i);
+                    if(braces.peek() == '(' && ch == ')' || braces.peek() == '{' && ch == '}' || braces.peek() == '[' && ch == ']')
+                    {
+                        braces.pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
-        if(braces.peek() == s.charAt(i))
-        {
-            braces.pop();
-        }
-        else
-        {
-            return false;
-        }
-        if(braces.size() == 0)
+        if(braces.isEmpty())
             return true;
         else
             return false;
@@ -33,9 +42,8 @@ public class ValidParenthesis
     public static void main(String[] args)
     {
         ValidParenthesis ob = new ValidParenthesis();
-
-        String s = "{}";
+        String s = "{{(){}}})";
         Stack<Character> braces = new Stack<Character>();
-        System.out.println(ob.validParenthesis(s, 0, braces));
+        System.out.println(ob.validParenthesis(s, braces));
     }
 }

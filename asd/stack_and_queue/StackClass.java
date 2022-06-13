@@ -1,7 +1,7 @@
 package asd.stack_and_queue;
 
 import java.util.ArrayList;
-import java.util.Stack;
+// import java.util.Stack;
 
 public class StackClass
 {
