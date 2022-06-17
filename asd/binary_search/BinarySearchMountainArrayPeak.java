@@ -11,9 +11,9 @@ public class BinarySearchMountainArrayPeak
 
         mid = start + (end - start)/2;
 
-        while(start <= end)
+        while(start < end)
         {
-            if(arr[mid + 1] > arr[mid])
+            if(arr[mid] < arr[mid + 1])
             {
                 start = mid + 1;
             }
