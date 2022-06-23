@@ -2,9 +2,9 @@ package asd.arrays;
 
 public class Merge2SortedArrays
 {
-    public void merge(int[] nums1, int m, int[] nums2, int n)
+    public int[] merge(int[] nums1, int m, int[] nums2, int n)
     {
-        int i, j, temp;
+        /* int i, j, temp;
         for(i = 0; i < n; i++)
         {
             temp = nums2[i];
@@ -20,9 +20,9 @@ public class Merge2SortedArrays
                 }
             }
             nums1[j + 1] = temp;
-        }
+        } */
 
-        /* int arr[] = new int[m + n];
+        int arr[] = new int[m + n];
         
         int i = 0, j = 0, k = 0;
         
@@ -56,16 +56,23 @@ public class Merge2SortedArrays
             k++;
             j++;
         }
-        
-        for(i = 0; i < m + n; i++)
-        {
-            nums1[i] = arr[i];
-        } */
+
+        return arr;
     }
 
     
     public static void main(String[] args)
     {
+        Merge2SortedArrays ob = new Merge2SortedArrays();
+        int nums1[] = {1, 2, 3, 5, 8, 9};
+        int nums2[] = {0, 4, 6, 7};
+
+        int arr[] = ob.merge(nums1, nums1.length, nums2, nums2.length);
+
+        for (int i : arr) {
+            System.out.println(i);
+        }
+
         
     }
 }

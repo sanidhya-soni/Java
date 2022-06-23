@@ -61,7 +61,7 @@ public class Source
                     src.deleteFromParticularPosition();
                     break;
                 case 8:
-                    src.reverse();
+                    src.reverse(null, src.head);
                     break;
                 case 9:
                     // src.sort();
@@ -220,4 +220,17 @@ public class Source
         head = prev;
         System.out.println("List Reversed Succesfully !");
     }
+    
+    void reverse(Node prev, Node curr)
+    {
+        if(curr == null)
+        {
+            head = prev;
+            return;
+        }
+        Node next  = curr.next;
+        reverse(curr, next);
+        curr.next = prev;
+    }
+
 }
