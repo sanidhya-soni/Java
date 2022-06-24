@@ -24,13 +24,13 @@ public class BinarySearchPivotElement
             mid = start + (end - start)/2;
         }
 
-        return arr[start];
+        return start;
     }
 
     public static void main(String[] args)
     {
         BinarySearchPivotElement ob = new BinarySearchPivotElement();
-        int arr[] = {7, 8, 9, 1, 2, 3, 4, 5};
+        int arr[] = {3, 1};
         System.out.println(ob.findPivot(arr, arr.length));
     }
 }
