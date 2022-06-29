@@ -12,7 +12,7 @@ public class QueueClass
         arr = new int[size];
     }
 
-    void add(int x)
+    void enqueue(int x)
     {
         if(rear == -1)
         {
@@ -27,7 +27,7 @@ public class QueueClass
         arr[++rear] = x;
     }
 
-    int remove()
+    int dequeue()
     {
         if(isEmpty())
             return -1;
@@ -60,14 +60,14 @@ public class QueueClass
     public static void main(String[] args)
     {
         QueueClass q = new QueueClass(5);
-        q.add(25);
-        q.add(5);
-        q.add(5);
-        q.add(5);
-        q.add(15);
-        q.add(10);
+        q.enqueue(25);
+        q.enqueue(5);
+        q.enqueue(5);
+        q.enqueue(5);
+        q.enqueue(15);
+        q.enqueue(10);
         System.out.println(q.peek());
-        System.out.println(q.remove());
+        System.out.println(q.dequeue());
         System.out.println(q.peek());
         // System.out.println(q);
     }

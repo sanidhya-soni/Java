@@ -13,7 +13,7 @@ public class CircularQueue
         arr = new int[size];
     }
 
-    void add(int x)
+    void enqueue(int x)
     {
         if(isFull())
         {
@@ -28,7 +28,7 @@ public class CircularQueue
         arr[rear] = x;
     }
 
-    int remove()
+    int dequeue()
     {
         if(isEmpty())
             return -1;
@@ -66,13 +66,13 @@ public class CircularQueue
     public static void main(String[] args)
     {
         CircularQueue q = new CircularQueue(5);
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
-        q.remove();
-        q.add(0);
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.enqueue(5);
+        q.dequeue();
+        q.enqueue(0);
         System.err.println(q.peek());
         System.err.println(arr[0]);
     }

@@ -21,7 +21,6 @@ public class Abc
         temp.next = newNode;
         temp = newNode;
 
-
         Node<Double> p = head;
 
         while(p != null)
