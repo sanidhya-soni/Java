@@ -41,6 +41,25 @@ public class BinarySearchTree
         return root;
     }
 
+    boolean search(Node root, int n)
+    {
+        if(root.data == n)
+        {
+            return true;
+        }
+
+        else if(n < root.data && root.left != null)
+        {
+            return search(root.left, n);
+        }
+
+        else if(n > root.data && root.right != null)
+        {
+            return search(root.right, n);
+        }
+        return false;
+    }
+
     void levelOrderTraversal(Node root)
     {
         Node newNode = new Node(-50000);
@@ -79,5 +98,6 @@ public class BinarySearchTree
         BinarySearchTree ob = new BinarySearchTree();
         ob.root = ob.createBST();
         ob.levelOrderTraversal(ob.root);
+        System.out.println(ob.search(ob.root, 10));
     }
 }

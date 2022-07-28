@@ -3,6 +3,7 @@ package asd.trees;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Source
 {
@@ -10,7 +11,7 @@ public class Source
 
     Node createBTree(Node root)
     {
-        System.out.print("Enter Data: ");
+        // System.out.print("Enter Data: ");
         int data = sc.nextInt();
 
         if(data == -1)
@@ -18,9 +19,9 @@ public class Source
 
         root = new Node(data);
 
-        System.out.println("Enter data to be inserted in left of " + data);
+        // System.out.println("Enter data to be inserted in left of " + data);
         root.left = createBTree(root.left);
-        System.out.println("Enter data to be inserted in right of " + data);
+        // System.out.println("Enter data to be inserted in right of " + data);
         root.right = createBTree(root.right);
 
         return root;
@@ -108,6 +109,46 @@ public class Source
         preOrder(node.right);
     }
 
+    void preOrderIterative(Node node)
+    {
+        Stack<Node> s = new Stack<>();
+        s.push(node);
+
+        while(!s.isEmpty())
+        {
+            Node temp = s.pop();
+            System.out.print(temp.data + " ");
+
+            if(temp.right != null)
+                s.push(temp.right);
+            if(temp.left != null)
+                s.push(temp.left);
+        }
+        System.out.println("Done");
+    }
+
+    void postOrderIterative(Node node)
+    {
+        Stack<Node> s = new Stack<>();
+        Stack<Integer> res = new Stack<>();
+        s.push(node);
+
+        while(!s.isEmpty())
+        {
+            Node temp = s.pop();
+            res.push(temp.data);
+            
+            if(temp.left != null)
+                s.push(temp.left);
+            if(temp.right != null)
+                s.push(temp.right);
+        }
+
+        while(!res.isEmpty())
+            System.out.print(res.pop() + " ");
+        System.out.println("Done");
+    }
+
     void postOrder(Node node)
     {
         if(node == null)
@@ -122,15 +163,19 @@ public class Source
         Source ob = new Source();
 
         Node root = null;
-        // root = ob.createBTree(root);
-        root = ob.createFromLevelOrder();
-        ob.inOrder(root);
-        System.out.println();
+        root = ob.createBTree(root);
+        // root = ob.createFromLevelOrder();
+        // ob.inOrder(root);
+        // System.out.println();
         ob.preOrder(root);
+        System.out.println();
+        ob.preOrderIterative(root);
         System.out.println();
         ob.postOrder(root);
         System.out.println();
-        ob.levelOrderTraversal(root);
+        ob.postOrderIterative(root);
+        // System.out.println();
+        // ob.levelOrderTraversal(root);
     }
 }
 
