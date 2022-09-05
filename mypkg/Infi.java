@@ -1,13 +1,21 @@
 package mypkg;
 
+import java.util.*;
+
 public class Infi
 {
     public static void main(String[] args)
     {
-        int i = 1;
-        for(i = 1; i <= i + 1; i++)
-        {
-            System.out.println(i);
-        }
+        Queue<String> q = new PriorityQueue<>();
+        q.add("Anu");
+        q.add("bought");
+        q.add("Apple");
+        q.add("PineApple");
+        q.add("Apple");
+        q.remove("Apple");
+        q.add("Orange");
+        q.add("Mango");
+        q.poll();
+        System.out.println(q);
     }
 }
