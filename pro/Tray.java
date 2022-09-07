@@ -22,7 +22,6 @@ public class Tray
 
     String add()
     {
-        String message;
         if(hasSpace())
         {
             full++;
