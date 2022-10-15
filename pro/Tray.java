@@ -2,9 +2,8 @@ package pro;
 
 public class Tray
 {
-    int size;
-    int[][] tray;
-    int full;
+    int max_cap;
+    boolean full;
 
     // Tray()
     // {
@@ -12,29 +11,29 @@ public class Tray
     //     full = 0;
     // }
 
-    Tray(int size)
-    {
-        this.size = size;
-        tray = new int[this.size][this.size];
-        full = 0;
-        System.out.println("New Tray Created");
-    }
+    // Tray(int size)
+    // {
+    //     this.size = size;
+    //     tray = new int[this.size][this.size];
+    //     full = 0;
+    //     System.out.println("New Tray Created");
+    // }
 
-    String add()
-    {
-        if(hasSpace())
-        {
-            full++;
-            return "Item added successfully!";
-        }
-        else
-        {
-            return "Tray is Full, please get a new one";
-        }
-    }
+    // String add()
+    // {
+    //     if(hasSpace())
+    //     {
+    //         full++;
+    //         return "Item added successfully!";
+    //     }
+    //     else
+    //     {
+    //         return "Tray is Full, please get a new one";
+    //     }
+    // }
 
-    boolean hasSpace()
-    {
-        return this.full != size * size;
-    }
+    // boolean hasSpace()
+    // {
+    //     return this.full != size * size;
+    // }
 }

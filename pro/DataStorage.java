@@ -2,10 +2,12 @@ package pro;
 
 public class DataStorage
 {
-    int day, size;
+    int day, month, year, weight;
     DataStorage(String data)
     {
-        this.day = Integer.parseInt(data.substring(0, 1)) - 1;
-        this.size = Integer.parseInt(data.substring(2, 3)) - 1;
+        this.day = Integer.parseInt(data.substring(0, 2));
+        this.month = Integer.parseInt(data.substring(2, 4));
+        this.year = Integer.parseInt(data.substring(4, 6));
+        this.weight = Integer.parseInt(data.substring(6));
     }
 }
