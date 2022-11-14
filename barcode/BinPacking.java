@@ -1,8 +1,5 @@
 package barcode;
 
-// Java program to find number
-// of bins required using
-// Best fit algorithm.
 class BinPacking
 {
     static int bestFit(int weight[], int n, int c)
@@ -20,11 +17,12 @@ class BinPacking
             {
                 if (bin_rem[j] >= weight[i] && bin_rem[j] - weight[i] < min)
                 {
+                    System.out.println("Inside If");
                     bi = j;
                     min = bin_rem[j] - weight[i];
                 }
             }
-
+            System.out.println("True");
             if (min == c + 1)
             {
                 bin_rem[res] = c - weight[i];
@@ -38,7 +36,7 @@ class BinPacking
 
     public static void main(String[] args)
     {
-        int[] weight = { 2, 5, 4, 7, 1, 3, 8 };
+        int[] weight = { 2, 5, 4, 7, 1, 3, 8, 10, 8, 7, 9, 8, 4};
         int c = 10;
         int n = weight.length;
         System.out.print("Number of bins required in Best Fit : " + bestFit(weight, n, c));

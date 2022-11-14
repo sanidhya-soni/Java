@@ -2,38 +2,48 @@ package pro;
 
 public class Tray
 {
-    int max_cap;
+
+    double capacity, occupied, remaining;
     boolean full;
 
-    // Tray()
-    // {
-    //     this.size = 0;
-    //     full = 0;
-    // }
+    /* Tray()
+    {
+        this.max_cap = 0;
+        this.curr_load = 0;
+        this.full = false;
+    } */
 
-    // Tray(int size)
-    // {
-    //     this.size = size;
-    //     tray = new int[this.size][this.size];
-    //     full = 0;
-    //     System.out.println("New Tray Created");
-    // }
+    Tray(double capacity)
+    {
+        this.capacity = capacity;
+        this.remaining = capacity;
+        full = false;
+        System.out.println("New Tray Created");
+    }
 
-    // String add()
-    // {
-    //     if(hasSpace())
-    //     {
-    //         full++;
-    //         return "Item added successfully!";
-    //     }
-    //     else
-    //     {
-    //         return "Tray is Full, please get a new one";
-    //     }
-    // }
+    void add(double volume)
+    {
+        if(hasSpace(volume))
+        {
+            this.occupied += volume;
+            this.remaining -= volume;
+            System.out.println("Item added successfully!" + occupied + " " + remaining);
+        }
+        else
+        {
+            this.full = true;
+            System.out.println("This can't Fit");
+        }
+    }
 
-    // boolean hasSpace()
-    // {
-    //     return this.full != size * size;
-    // }
+    boolean isFull()
+    {
+        return this.full;
+    }
+
+    boolean hasSpace(double volume)
+    {
+        // System.out.println(this.remaining - volume > 0);
+        return this.remaining - volume > 0;
+    }
 }
