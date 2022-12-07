@@ -1,12 +1,16 @@
 package mypkg;
 
+import java.io.IOException;
+
 public class Blah
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws InterruptedException, IOException
     {
-        int a = 5;
-        int b = 4;
-        int c = a / b;
-        System.out.println(c);
+       for (int x =0 ; x <=10000 ; x++)
+       {
+           String data = "\r" + x;
+           System.out.print(data);
+           Thread.sleep(1);
+       }
     }
 }

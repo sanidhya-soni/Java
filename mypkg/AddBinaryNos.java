@@ -47,14 +47,14 @@ public class AddBinaryNos
         return ans;
     }
 
-    String recc(Stack<Character> s)
-    {
-        int x = s.size();
-        for(int i = 0; i < x; i++)
-        {
+    // String recc(Stack<Character> s)
+    // {
+    //     int x = s.size();
+    //     for(int i = 0; i < x; i++)
+    //     {
             
-        }
-    }
+    //     }
+    // }
 
     public static void main(String[] args)
     {
