@@ -1,4 +1,4 @@
-package abstraction;
+package oops.abstraction;
 
 public abstract class Food
 {

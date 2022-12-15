@@ -1,3 +1,5 @@
+package DSA;
+
 public class Node
 {
     int data;
