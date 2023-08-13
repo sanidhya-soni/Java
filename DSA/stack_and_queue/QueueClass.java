@@ -2,14 +2,17 @@ package DSA.stack_and_queue;
 
 public class QueueClass
 {
-    static int arr[];
-    static int size;
-    static int rear = -1;
+    int arr[];
+    int size;
+    int rear;
+    int front;
 
     QueueClass(int n)
     {
         this.size = n;
-        arr = new int[size];
+        this.arr = new int[size];
+        this.rear = -1;
+        this.front = -1;
     }
 
     void enqueue(int x)

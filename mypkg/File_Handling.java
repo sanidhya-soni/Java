@@ -1,6 +1,5 @@
 package mypkg;
 
-import java.util.*;
 import java.io.*;
 
 public class File_Handling

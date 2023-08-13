@@ -1,7 +1,5 @@
 package DSA.linked_list;
 
-import DSA.recurssion.IsSorted;
-
 public class ReverseFromBw
 {
     Node head, temp;

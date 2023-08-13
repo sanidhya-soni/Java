@@ -27,7 +27,7 @@ public class Source
             System.out.print("Enter 1 for entering more entries or enter other number to exit : ");
             ch = sc.nextInt();
         }
-        Node n = tail;
+        // Node n = tail;
 
         Node current = head;
         temp = null;

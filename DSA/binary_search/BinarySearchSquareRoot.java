@@ -32,7 +32,8 @@ public class BinarySearchSquareRoot
     double addPrecision(int n, int precision, int intsqrt)
     {
         double factor = 1.0;
-        double sol = intsqrt, x;
+        double sol = intsqrt;
+        // double x;
 
         for(int i = 1; i <= precision; i++)
         {

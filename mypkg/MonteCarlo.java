@@ -10,13 +10,13 @@ public class MonteCarlo
         int n, total = 0;
         System.out.print("Enter total no. of entries: ");
         n = sc.nextInt();
-        String catagory[] = {"Filling", "crown", "cleaning", "extracting", "checkup"};
-        int time_required[] = {45, 60, 15, 45, 15};
+        // String catagory[] = {"Filling", "crown", "cleaning", "extracting", "checkup"};
+        // int time_required[] = {45, 60, 15, 45, 15};
         int no_of_patients[] = {40, 15, 15, 10, 20};
         double prob[] = new double[n];
         double cumi_prob[] = new double[n];
         double cumi_sum = 0.0;
-        int random_no[] = {40, 82, 11, 34, 25, 66, 17, 79};
+        // int random_no[] = {40, 82, 11, 34, 25, 66, 17, 79};
 
 
         // Finding probability and cumulative probability
