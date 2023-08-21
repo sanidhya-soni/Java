@@ -1,4 +1,4 @@
-package DSA.sorting;
+package dsa.sorting;
 
 public class MergeSort
 {

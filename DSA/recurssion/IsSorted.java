@@ -1,4 +1,4 @@
-package DSA.recurssion;
+package dsa.recurssion;
 
 public class IsSorted
 {

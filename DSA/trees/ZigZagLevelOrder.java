@@ -1,4 +1,4 @@
-package DSA.trees;
+package dsa.trees;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class ZigZagLevelOrder
 {
-    Node root = null;
+    TreeNode root = null;
     Scanner sc = new Scanner(System.in);
 
-    Node createBTree(Node root)
+    TreeNode createBTree(TreeNode root)
     {
         // System.out.print("Enter data: ");
         int data = sc.nextInt();
@@ -18,7 +18,7 @@ public class ZigZagLevelOrder
         if(data == -1)
             return null;
         
-        root = new Node(data);
+        root = new TreeNode(data);
 
         // System.out.print("Enter data in left of " + root.data + ": ");
         root.left = createBTree(root.left);
@@ -27,15 +27,15 @@ public class ZigZagLevelOrder
         return root;
     }
 
-    void levelOrderTraversal(Node root)
+    void levelOrderTraversal(TreeNode root)
     {
-        Queue<Node> q = new ArrayDeque<>();
+        Queue<TreeNode> q = new ArrayDeque<>();
 
         if(root == null)
             return;
 
         boolean leftToRight = true;
-        Node nextLine = new Node(-1000);
+        TreeNode nextLine = new TreeNode(-1000);
 
         q.add(root);
         q.add(nextLine);
@@ -45,7 +45,7 @@ public class ZigZagLevelOrder
 
         while(!q.isEmpty())
         {
-            Node p = q.poll();
+            TreeNode p = q.poll();
             if(p == nextLine)
             {
                 if(leftToRight)

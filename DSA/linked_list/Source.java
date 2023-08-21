@@ -1,4 +1,4 @@
-package DSA.linked_list;
+package dsa.linked_list;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

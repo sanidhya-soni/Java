@@ -1,4 +1,4 @@
-package DSA.hashmap;
+package dsa.hashmap;
 
 import java.util.HashMap;
 

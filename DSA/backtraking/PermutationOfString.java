@@ -1,4 +1,4 @@
-package DSA.backtraking;
+package dsa.backtraking;
 
 public class PermutationOfString
 {

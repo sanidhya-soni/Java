@@ -1,4 +1,4 @@
-package DSA.stack_and_queue;
+package dsa.stack_and_queue;
 
 import java.util.ArrayList;
 // import java.util.Stack;

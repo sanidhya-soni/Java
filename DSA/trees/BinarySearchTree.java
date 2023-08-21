@@ -1,4 +1,4 @@
-package DSA.trees;
+package dsa.trees;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -9,13 +9,13 @@ public class BinarySearchTree
 
     Scanner sc = new Scanner(System.in);
 
-    Node root = null;
+    TreeNode root = null;
 
-    Node insertInBST(Node root ,int data)
+    TreeNode insertInBST(TreeNode root ,int data)
     {
         if(root == null)
         {
-            root = new Node(data);
+            root = new TreeNode(data);
             return root;
         }
 
@@ -27,7 +27,7 @@ public class BinarySearchTree
             return root;
     }
 
-    Node createBST()
+    TreeNode createBST()
     {
         System.out.print("Enter data to be inserted: ");
         int data = sc.nextInt();
@@ -41,7 +41,7 @@ public class BinarySearchTree
         return root;
     }
 
-    boolean search(Node root, int n)
+    boolean search(TreeNode root, int n)
     {
         if(root.data == n)
         {
@@ -60,10 +60,10 @@ public class BinarySearchTree
         return false;
     }
 
-    void levelOrderTraversal(Node root)
+    void levelOrderTraversal(TreeNode root)
     {
-        Node newNode = new Node(-50000);
-        Queue<Node> q = new ArrayDeque<Node>();
+        TreeNode newNode = new TreeNode(-50000);
+        Queue<TreeNode> q = new ArrayDeque<TreeNode>();
         if(root != null)
         {
             q.add(root);
@@ -72,7 +72,7 @@ public class BinarySearchTree
 
         while(!q.isEmpty())
         {
-            Node temp = q.poll();
+            TreeNode temp = q.poll();
 
             if(temp.data == -50000)
             {

@@ -1,12 +1,12 @@
-package DSA.trees;
+package dsa.trees;
 
-public class Node
+public class TreeNode
 {
     int data;
-    Node left;
-    Node right;
+    TreeNode left;
+    TreeNode right;
 
-    Node(int data)
+    TreeNode(int data)
     {
         this.data = data;
         this.left = null;

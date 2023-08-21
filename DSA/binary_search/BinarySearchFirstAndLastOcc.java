@@ -1,4 +1,4 @@
-package DSA.binary_search;
+package dsa.binary_search;
 
 public class BinarySearchFirstAndLastOcc {
 

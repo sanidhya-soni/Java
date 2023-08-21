@@ -1,4 +1,4 @@
-package DSA.trees;
+package dsa.trees;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -9,7 +9,7 @@ public class Source
 {
     Scanner sc = new Scanner(System.in);
 
-    Node createBTree(Node root)
+    TreeNode createBTree(TreeNode root)
     {
         // System.out.print("Enter Data: ");
         int data = sc.nextInt();
@@ -17,7 +17,7 @@ public class Source
         if(data == -1)
             return null;
 
-        root = new Node(data);
+        root = new TreeNode(data);
 
         // System.out.println("Enter data to be inserted in left of " + data);
         root.left = createBTree(root.left);
@@ -27,23 +27,23 @@ public class Source
         return root;
     }
 
-    Node createFromLevelOrder()
+    TreeNode createFromLevelOrder()
     {
-        Queue<Node> q = new ArrayDeque<Node>();
+        Queue<TreeNode> q = new ArrayDeque<TreeNode>();
         System.out.print("Enter data for root: ");
-        Node root = new Node(sc.nextInt());
+        TreeNode root = new TreeNode(sc.nextInt());
         int x;
         q.add(root);
 
         while(!q.isEmpty())
         {
-            Node temp = q.poll();
+            TreeNode temp = q.poll();
 
             System.out.print("Enter left side of " + temp.data + ": ");
             x = sc.nextInt();
             if(x != -1)
             {
-                temp.left = new Node(x);
+                temp.left = new TreeNode(x);
                 q.add(temp.left);
             }
 
@@ -51,17 +51,17 @@ public class Source
             x = sc.nextInt();
             if(x != -1)
             {
-                temp.right = new Node(x);
+                temp.right = new TreeNode(x);
                 q.add(temp.right);
             }
         }
         return root;
     }
 
-    void levelOrderTraversal(Node root)
+    void levelOrderTraversal(TreeNode root)
     {
-        Node newNode = new Node(-50000);
-        Queue<Node> q = new ArrayDeque<Node>();
+        TreeNode newNode = new TreeNode(-50000);
+        Queue<TreeNode> q = new ArrayDeque<TreeNode>();
         if(root != null)
         {
             q.add(root);
@@ -70,7 +70,7 @@ public class Source
 
         while(!q.isEmpty())
         {
-            Node temp = q.poll();
+            TreeNode temp = q.poll();
 
             if(temp.data == -50000)
             {
@@ -91,7 +91,7 @@ public class Source
         }
     }
 
-    void inOrder(Node node)
+    void inOrder(TreeNode node)
     {
         if(node == null)
             return;
@@ -100,7 +100,7 @@ public class Source
         inOrder(node.right);
     }
 
-    void preOrder(Node node)
+    void preOrder(TreeNode node)
     {
         if(node == null)
             return;
@@ -109,14 +109,14 @@ public class Source
         preOrder(node.right);
     }
 
-    void preOrderIterative(Node node)
+    void preOrderIterative(TreeNode node)
     {
-        Stack<Node> s = new Stack<>();
+        Stack<TreeNode> s = new Stack<>();
         s.push(node);
 
         while(!s.isEmpty())
         {
-            Node temp = s.pop();
+            TreeNode temp = s.pop();
             System.out.print(temp.data + " ");
 
             if(temp.right != null)
@@ -127,15 +127,15 @@ public class Source
         System.out.println("Done");
     }
 
-    void postOrderIterative(Node node)
+    void postOrderIterative(TreeNode node)
     {
-        Stack<Node> s = new Stack<>();
+        Stack<TreeNode> s = new Stack<>();
         Stack<Integer> res = new Stack<>();
         s.push(node);
 
         while(!s.isEmpty())
         {
-            Node temp = s.pop();
+            TreeNode temp = s.pop();
             res.push(temp.data);
             
             if(temp.left != null)
@@ -149,7 +149,7 @@ public class Source
         System.out.println("Done");
     }
 
-    void postOrder(Node node)
+    void postOrder(TreeNode node)
     {
         if(node == null)
             return;
@@ -162,7 +162,7 @@ public class Source
     {
         Source ob = new Source();
 
-        Node root = null;
+        TreeNode root = null;
         root = ob.createBTree(root);
         // root = ob.createFromLevelOrder();
         // ob.inOrder(root);

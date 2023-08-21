@@ -1,4 +1,4 @@
-package DSA.doubley_linked_list;
+package dsa.doubley_linked_list;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package DSA.linked_list;
+package dsa.linked_list;
 
 public class SelectionSort
 {
